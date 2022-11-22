@@ -22,6 +22,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  PUBLIC_URL: ${{ steps.deployment.outputs.page_url }}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
