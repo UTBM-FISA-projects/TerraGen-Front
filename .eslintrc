@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "semi": "error",
+    "eqeqeq": "warn",
+    "indent": ["error", 4],
+    "jsx-quotes": ["error", "prefer-double"],
+    "newline-before-return": "error",
+    "no-console": "error",
+    "no-extra-semi": "error",
+    "no-lonely-if": "error",
+    "no-irregular-whitespace": "error",
+    "no-nested-ternary": "error",
+    "no-trailing-spaces": "error",
+    "quotes": ["error", "single"],
+    "prefer-const": "error",
+    "prefer-template": "warn",
+    "no-var": "error",
+    "no-unused-vars": "error"
+  }
+}
