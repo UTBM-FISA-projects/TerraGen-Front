@@ -17,6 +17,7 @@
   },
   "plugins": [
     "react",
+    "react-hooks",
     "@typescript-eslint"
   ],
   "settings": {
@@ -217,6 +218,7 @@
     "prefer-const": "error",
     "require-await": "error",
     "require-yield": "error",
-    "yoda": "error"
+    "yoda": "error",
+    "react-hooks/exhaustive-deps": "error"
   }
 }
