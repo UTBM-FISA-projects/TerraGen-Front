@@ -8,10 +8,16 @@ import {
     useEuiTheme,
     EuiContextMenuPanel,
     EuiContextMenuItem,
+    EuiHeaderLogo,
 } from '@elastic/eui';
-import { Outlet } from 'react-router-dom';
+import {
+    Outlet,
+    Link,
+} from 'react-router-dom';
 
 import { ConfigContext } from '../context';
+
+import logo from '../assets/favicon.svg';
 
 const Header = () => {
     const [themeOpen, setThemeOpen] = React.useState(false);
@@ -26,12 +32,26 @@ const Header = () => {
     return (
         <>
             <EuiHeader theme={colorMode === 'LIGHT' ? 'default' : 'dark'}>
-                <EuiHeaderSection />
+                <EuiHeaderSection>
+                    <EuiHeaderSectionItem>
+                        <Link to="/">
+                            <EuiHeaderLogo iconType={logo}>TerraGen</EuiHeaderLogo>
+                        </Link>
+                    </EuiHeaderSectionItem>
+                </EuiHeaderSection>
                 <EuiHeaderSection side="right">
                     <EuiHeaderSectionItem>
                         <EuiPopover
                             id="theme-popover"
-                            button={<EuiButtonEmpty onClick={() => {setThemeOpen(!themeOpen);}} iconSide="right" iconType="arrowDown">Theme</EuiButtonEmpty>}
+                            button={
+                                <EuiButtonEmpty
+                                    onClick={() => {setThemeOpen(!themeOpen);}}
+                                    iconSide="right"
+                                    iconType="arrowDown"
+                                >
+                                    Theme
+                                </EuiButtonEmpty>
+                            }
                             isOpen={themeOpen}
                             closePopover={closePopover}
                             panelPaddingSize="none"
