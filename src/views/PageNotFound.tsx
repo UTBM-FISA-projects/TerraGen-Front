@@ -21,7 +21,7 @@ const PageNotFound = () => {
                 <EuiEmptyPrompt
                     title={<h2>Page not found</h2>}
                     color="plain"
-                    body={<p>Sorry, we can't find the page you're looking for. It might have been removed or renamed, or maybe it never existed.</p>}
+                    body={<p>Sorry, we can&apos;t find the page you&apos;re looking for. It might have been removed or renamed, or maybe it never existed.</p>}
                     actions={[
                         <Link key={1} to="/">
                             <EuiButton color="primary" fill size="m">Go home</EuiButton>
