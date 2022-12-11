@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
     EuiPage,
     EuiPageBody,
@@ -7,9 +8,10 @@ import {
     EuiButton,
     EuiResizableContainer,
     EuiLoadingContent,
-    EuiLoadingChart,
     EuiPanel,
 } from '@elastic/eui';
+
+import { Graph } from '../components';
 
 const Create = () => {
     const [empty, setEmpty] = React.useState(true);
@@ -37,7 +39,7 @@ const Create = () => {
                             {(EuiResizablePanel, EuiResizableButton) => (
                                 <>
                                     <EuiResizablePanel mode="main" initialSize={70} minSize="40%">
-                                        <EuiLoadingChart size="xl" />
+                                        <Graph />
                                     </EuiResizablePanel>
                                     <EuiResizableButton />
                                     <EuiResizablePanel
