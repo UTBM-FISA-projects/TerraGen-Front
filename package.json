@@ -27,7 +27,7 @@
     "prebuild": "rm -rfv build",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
-    "lint": "eslint src/**/*",
+    "lint": "eslint src/**/*.tsx src/**/*.ts",
     "eject": "react-scripts eject"
   },
   "browserslist": {
