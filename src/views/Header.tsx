@@ -13,6 +13,7 @@ import {
 import {
     Outlet,
     Link,
+    NavLink,
 } from 'react-router-dom';
 
 import { ConfigContext } from '../context';
@@ -37,6 +38,11 @@ const Header = () => {
                         <Link to="/">
                             <EuiHeaderLogo iconType={logo}>TerraGen</EuiHeaderLogo>
                         </Link>
+                    </EuiHeaderSectionItem>
+                    <EuiHeaderSectionItem>
+                        <NavLink to="/marketplace">
+                            Marketplace
+                        </NavLink>
                     </EuiHeaderSectionItem>
                 </EuiHeaderSection>
                 <EuiHeaderSection side="right">

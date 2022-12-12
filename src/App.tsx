@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {
-    BrowserRouter,
     Routes,
     Route,
+    HashRouter,
 } from 'react-router-dom';
 
 import { EuiProvider } from '@elastic/eui';
@@ -25,7 +25,7 @@ const App = () => {
     return (
         <EuiProvider colorMode={colorMode}>
             <ConfigContext.Provider value={{ colorMode, setColorMode }}>
-                <BrowserRouter>
+                <HashRouter>
                     <Routes>
                         <Route path="/" element={<Header />}>
                             <Route index element={<Create />} />
@@ -33,7 +33,7 @@ const App = () => {
                             <Route path="*" element={<PageNotFound />} />
                         </Route>
                     </Routes>
-                </BrowserRouter>
+                </HashRouter>
             </ConfigContext.Provider>
         </EuiProvider>
     );
