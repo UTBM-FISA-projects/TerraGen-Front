@@ -6,7 +6,8 @@ services:
     user: "node"
     working_dir: /app
     environment:
-      - NODE_ENV=development
+      NODE_ENV: "development"
+      ESLINT_NO_DEV_ERRORS: "true"
     volumes:
       - ./:/app
     ports:
