@@ -12,7 +12,10 @@ import {
     EuiSpacer,
 } from '@elastic/eui';
 
-import { Graph } from '../components';
+import {
+    Graph,
+    ResourcesSidebar,
+} from '../components';
 
 const Create = () => {
     const [empty, setEmpty] = React.useState(true);
@@ -43,17 +46,7 @@ const Create = () => {
                                     initialSize={20}
                                     minSize="15%"
                                 >
-                                    <EuiPanel grow>
-                                        <EuiLoadingContent lines={10} />
-                                        <EuiSpacer />
-                                        <EuiLoadingContent lines={10} />
-                                        <EuiSpacer />
-                                        <EuiLoadingContent lines={10} />
-                                        <EuiSpacer />
-                                        <EuiLoadingContent lines={10} />
-                                        <EuiSpacer />
-                                        <EuiLoadingContent lines={10} />
-                                    </EuiPanel>
+                                    <ResourcesSidebar />
                                 </EuiResizablePanel>
                                 <EuiResizableButton />
                                 <EuiResizablePanel mode="main" initialSize={50} minSize="40%">
