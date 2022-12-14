@@ -24,7 +24,7 @@ const App = () => {
 
     return (
         <EuiProvider colorMode={colorMode}>
-            <ConfigContext.Provider value={{ colorMode, setColorMode }}>
+            <ConfigContext.Provider value={{ setColorMode }}>
                 <HashRouter>
                     <Routes>
                         <Route path="/" element={<Header />}>

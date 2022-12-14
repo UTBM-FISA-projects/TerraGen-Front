@@ -9,6 +9,7 @@ import {
     EuiResizableContainer,
     EuiLoadingContent,
     EuiPanel,
+    EuiSpacer,
 } from '@elastic/eui';
 
 import { Graph } from '../components';
@@ -17,7 +18,7 @@ const Create = () => {
     const [empty, setEmpty] = React.useState(true);
 
     return (
-        <EuiPage grow>
+        <EuiPage grow style={{ height: 'calc(100vh - 48px)' }}>
             <EuiPageBody>
                 {empty ? (
                     <EuiPageSection
@@ -34,27 +35,45 @@ const Create = () => {
                         />
                     </EuiPageSection>
                 ) : (
-                    <EuiPageSection color="plain" alignment="top" grow>
-                        <EuiResizableContainer>
-                            {(EuiResizablePanel, EuiResizableButton) => (
-                                <>
-                                    <EuiResizablePanel mode="main" initialSize={70} minSize="40%">
-                                        <Graph />
-                                    </EuiResizablePanel>
-                                    <EuiResizableButton />
-                                    <EuiResizablePanel
-                                        mode="collapsible"
-                                        initialSize={30}
-                                        minSize="20%"
-                                    >
-                                        <EuiPanel grow>
-                                            <EuiLoadingContent lines={10} />
-                                        </EuiPanel>
-                                    </EuiResizablePanel>
-                                </>
-                            )}
-                        </EuiResizableContainer>
-                    </EuiPageSection>
+                    <EuiResizableContainer style={{ height: '100%' }}>
+                        {(EuiResizablePanel, EuiResizableButton) => (
+                            <>
+                                <EuiResizablePanel
+                                    mode="collapsible"
+                                    initialSize={20}
+                                    minSize="15%"
+                                >
+                                    <EuiPanel grow>
+                                        <EuiLoadingContent lines={10} />
+                                        <EuiSpacer />
+                                        <EuiLoadingContent lines={10} />
+                                        <EuiSpacer />
+                                        <EuiLoadingContent lines={10} />
+                                        <EuiSpacer />
+                                        <EuiLoadingContent lines={10} />
+                                        <EuiSpacer />
+                                        <EuiLoadingContent lines={10} />
+                                    </EuiPanel>
+                                </EuiResizablePanel>
+                                <EuiResizableButton />
+                                <EuiResizablePanel mode="main" initialSize={50} minSize="40%">
+                                    <Graph />
+                                </EuiResizablePanel>
+                                <EuiResizableButton />
+                                <EuiResizablePanel
+                                    mode="collapsible"
+                                    initialSize={30}
+                                    minSize="15%"
+                                >
+                                    <EuiPanel grow>
+                                        <EuiLoadingContent lines={10} />
+                                        <EuiSpacer />
+                                        <EuiLoadingContent lines={10} />
+                                    </EuiPanel>
+                                </EuiResizablePanel>
+                            </>
+                        )}
+                    </EuiResizableContainer>
                 )}
             </EuiPageBody>
         </EuiPage>

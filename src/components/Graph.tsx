@@ -12,6 +12,7 @@ import {
     Connection,
     addEdge,
 } from 'reactflow';
+import { useEuiTheme } from '@elastic/eui';
 
 import 'reactflow/dist/style.css';
 
@@ -23,6 +24,8 @@ const Graph = () => {
         Resource.create('API Gateway').toNode(),
     ]);
     const [edges, setEdges] = React.useState<Array<Edge>>([]);
+
+    const { colorMode } = useEuiTheme();
 
     const handleNodesChange = useCallback((changes: Array<NodeChange>) => {
         setNodes(applyNodeChanges(changes, nodes));
@@ -43,7 +46,7 @@ const Graph = () => {
             onEdgesChange={handleEdgesChange}
             onConnect={handleConnect}
         >
-            <Background />
+            <Background style={{ backgroundColor: colorMode === 'LIGHT' ? 'white' : 'black' }} />
             <Controls />
         </ReactFlow>
     );
